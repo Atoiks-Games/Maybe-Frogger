@@ -78,7 +78,24 @@ namespace Frogger
                 }
             }
 
-            // TODO: ADD LANDER PHYSICS TO THIS `pbFrog`
+            if (pbFrog.Location.X < 16)
+            {
+                pbFrog.Location = new Point(this.Size.Width - 16, pbFrog.Location.Y);
+            }
+            else
+            if (pbFrog.Location.X > this.Size.Width - 16)
+            {
+                pbFrog.Location = new Point(16, pbFrog.Location.Y);
+            }
+            if (pbFrog.Location.Y < 0)
+            {
+                pbFrog.Location = new Point(pbFrog.Location.X, this.Size.Height - 48);
+            }
+            else
+            if (pbFrog.Location.Y > this.Size.Height - 28)
+            {
+                pbFrog.Location = new Point(pbFrog.Location.X, 0);
+            }
 
             if (random.Next(1, 256) % 17 < 6)
             {
@@ -96,6 +113,7 @@ namespace Frogger
             }
             return;
         end:
+            this.KeyDown -= Form1_KeyDown;
             MessageBox.Show("You SUCK!!!");
         }
     }
