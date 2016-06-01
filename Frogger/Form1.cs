@@ -82,8 +82,7 @@ namespace Frogger
             {
                 pbFrog.Location = new Point(this.Size.Width - 16, pbFrog.Location.Y);
             }
-            else
-            if (pbFrog.Location.X > this.Size.Width - 16)
+            else if (pbFrog.Location.X > this.Size.Width - 16)
             {
                 pbFrog.Location = new Point(16, pbFrog.Location.Y);
             }
@@ -91,8 +90,7 @@ namespace Frogger
             {
                 pbFrog.Location = new Point(pbFrog.Location.X, this.Size.Height - 48);
             }
-            else
-            if (pbFrog.Location.Y > this.Size.Height - 28)
+            else if (pbFrog.Location.Y > this.Size.Height - 28)
             {
                 pbFrog.Location = new Point(pbFrog.Location.X, 0);
             }
