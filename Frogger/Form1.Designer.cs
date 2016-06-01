@@ -74,8 +74,11 @@
             this.ClientSize = new System.Drawing.Size(556, 328);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbFrog);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Maybe Frogger?";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbFrog)).EndInit();
             this.ResumeLayout(false);
