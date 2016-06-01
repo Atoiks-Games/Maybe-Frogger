@@ -100,7 +100,7 @@ namespace Frogger
                 PictureBox pb = new PictureBox();
                 pb.Image = imgs.Images[0];
                 pb.Size = new Size(32, 32);
-                pb.Location = new Point(0, (int)Math.Floor(random.NextDouble() * 4 * QUARTER_Y));
+                pb.Location = new Point(0, (int)Math.Floor(random.NextDouble() * 4 * (QUARTER_Y - 16)) + 16);
                 this.Controls.Add(pb);
                 cars.Add(pb);
             }
