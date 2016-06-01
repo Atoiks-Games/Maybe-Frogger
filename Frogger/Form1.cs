@@ -23,6 +23,17 @@ namespace Frogger
             width = this.Size.Width;
             height = this.Size.Height;
             QUARTER_Y = height / 4;
+
+            MessageBox.Show("WASD to navigate. Dodge the tiles.");
+
+            Post_init();
+        }
+
+        private void Post_init()
+        {
+            btnRestart.Visible = false;
+            btnRestart.Enabled = false;
+
             int tempY = 0;
             for (int i = 0; i < 4; i++)
             {
@@ -80,17 +91,17 @@ namespace Frogger
 
             if (pbFrog.Location.X < 16)
             {
-                pbFrog.Location = new Point(this.Size.Width - 16, pbFrog.Location.Y);
+                pbFrog.Location = new Point(width - 16, pbFrog.Location.Y);
             }
-            else if (pbFrog.Location.X > this.Size.Width - 16)
+            else if (pbFrog.Location.X > width - 16)
             {
                 pbFrog.Location = new Point(16, pbFrog.Location.Y);
             }
             if (pbFrog.Location.Y < 0)
             {
-                pbFrog.Location = new Point(pbFrog.Location.X, this.Size.Height - 48);
+                pbFrog.Location = new Point(pbFrog.Location.X, height - 48);
             }
-            else if (pbFrog.Location.Y > this.Size.Height - 28)
+            else if (pbFrog.Location.Y > height - 28)
             {
                 pbFrog.Location = new Point(pbFrog.Location.X, 0);
             }
@@ -113,6 +124,19 @@ namespace Frogger
         end:
             this.KeyDown -= Form1_KeyDown;
             MessageBox.Show("You SUCK!!!");
+            btnRestart.Visible = true;
+            btnRestart.Enabled = true;
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            while (cars.Count() > 0)
+            {
+                this.Controls.Remove(cars[0]);
+                cars.RemoveAt(0);
+            }
+            Post_init();
+            this.KeyDown += Form1_KeyDown;
         }
     }
 }

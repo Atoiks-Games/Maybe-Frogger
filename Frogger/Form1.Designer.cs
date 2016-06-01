@@ -34,6 +34,7 @@
             this.pbFrog = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRestart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbFrog)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,12 +67,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Score: 0";
             // 
+            // btnRestart
+            // 
+            this.btnRestart.Location = new System.Drawing.Point(469, 13);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(75, 23);
+            this.btnRestart.TabIndex = 2;
+            this.btnRestart.Text = "Restart?";
+            this.btnRestart.UseVisualStyleBackColor = true;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(556, 328);
+            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbFrog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -92,6 +104,7 @@
         private System.Windows.Forms.PictureBox pbFrog;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRestart;
     }
 }
 
