@@ -137,6 +137,7 @@ namespace Frogger
             }
             Post_init();
             surviveTime = 0;
+            label1.Text = "Score: 0";
             this.KeyDown += Form1_KeyDown;
         }
     }
