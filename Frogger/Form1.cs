@@ -24,7 +24,7 @@ namespace Frogger
             height = this.Size.Height;
             QUARTER_Y = height / 4;
 
-            MessageBox.Show("WASD to navigate. Dodge the tiles.");
+            MessageBox.Show("WASD or Arrow Keys to navigate. Dodge the tiles.");
 
             Post_init();
         }
@@ -55,15 +55,19 @@ namespace Frogger
             switch (e.KeyCode)
             {
                 case Keys.W:
+                case Keys.Up:
                     pbFrog.Location = new Point(pbFrog.Location.X, pbFrog.Location.Y - 5);
                     break;
                 case Keys.S:
+                case Keys.Down:
                     pbFrog.Location = new Point(pbFrog.Location.X, pbFrog.Location.Y + 5);
                     break;
                 case Keys.A:
+                case Keys.Left:
                     pbFrog.Location = new Point(pbFrog.Location.X - 10, pbFrog.Location.Y);
                     break;
                 case Keys.D:
+                case Keys.Right:
                     pbFrog.Location = new Point(pbFrog.Location.X + 8, pbFrog.Location.Y);
                     break;
             }
@@ -89,13 +93,13 @@ namespace Frogger
                 }
             }
 
-            if (pbFrog.Location.X < 16)
+            if (pbFrog.Location.X < 0)
             {
                 pbFrog.Location = new Point(width - 16, pbFrog.Location.Y);
             }
             else if (pbFrog.Location.X > width - 16)
             {
-                pbFrog.Location = new Point(16, pbFrog.Location.Y);
+                pbFrog.Location = new Point(0, pbFrog.Location.Y);
             }
             if (pbFrog.Location.Y < 0)
             {
