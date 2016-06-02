@@ -136,6 +136,7 @@ namespace Frogger
                 cars.RemoveAt(0);
             }
             Post_init();
+            surviveTime = 0;
             this.KeyDown += Form1_KeyDown;
         }
     }
